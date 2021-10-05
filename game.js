@@ -30,7 +30,7 @@ function checkAnswer(currentLevel) {
             document.querySelector("body").classList.remove("game-over");
         }, 200)
 
-        $("#level-title").html("Game Over, Press Any Key to Restart");
+        $("#level-title").html("Game Over, Press Any Key or Click Here to Restart");
         startOver();
     }
 }
@@ -81,7 +81,17 @@ $(document).keydown(function (event) {
         started = true;
     }
 
-})
+});
+
+$("h1").click(function () {
+    if (!started) {
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        started = true;
+    }
+});
+
+
 
 
 
